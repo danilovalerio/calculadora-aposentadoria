@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         )
 
         btn_calcular.setOnClickListener(){
-            toast(calculaAposentadoria(spn_sexo.selectedItem.toString(),et_idade.text.toString().toInt()))
+            tv_resultado.setText(calculaAposentadoria(spn_sexo.selectedItem.toString(),et_idade.text.toString().toInt()))
+//            toast(calculaAposentadoria(spn_sexo.selectedItem.toString(),et_idade.text.toString().toInt()))
         }
     }
 
@@ -29,6 +30,6 @@ class MainActivity : AppCompatActivity() {
             "Masculino" -> msg = (65 - idade).toString()
             "Feminino" -> msg = (60 - idade).toString()
         }
-        return msg.toString()
+        return "Para você se aposentar falta(m) ${msg} ano(s) "
     }
 }
